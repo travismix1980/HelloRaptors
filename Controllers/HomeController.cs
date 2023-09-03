@@ -6,8 +6,12 @@ namespace HelloRaptors.Controllers
     {
         public IActionResult Index()
         {
-            //return View();
-            return Content("Hello Toronto Raptors");
+            Models.Raptors player = new()
+            {
+                PlayerName = "Kyle Lowry",
+                ArrivalDate = new(2012, 3, 24),
+            };
+            return View(player);
         }
     }
 }
