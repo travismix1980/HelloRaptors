@@ -14,5 +14,102 @@
     <h1><b>@Model.PlayerName</b></h1>
     <br />
     <p>was signed by the Toronto Raptors on @Model.ArrivalDate.ToLongDateString()</p>
+    <br />
+    <br />
+    @*This is a comment in Razor
+    Because its different thats why
+    *@
+    <p>Welcome to our Toronto Raptors Site... Current date is @DateTime.Now.ToString()</p>
+    @if (DateTime.Now.Year >= 2022)
+    {
+        <span>The year is @DateTime.Now.Year</span>
+    }
+    else
+    {
+        <span>The year is pre 2022</span>
+    }
+
+    <br />
+    <br />
+
+    @{
+        var name = "Travis Mix";
+        int age = 43;
+    }
+
+    <p>Hello, I am @name.Substring(0,6) and I am @age years old</p>
+    <br />
+    @{
+        var helloWorld = "<b>Welcome to Oregon</b>";
+    }
+
+    <p>@helloWorld</p>
+    <p>@Html.Raw(helloWorld)</p>
+    <br />
+    <br />
+    <h2>Variables</h2>
+    @{
+        int sum = 32 + 10;
+        string greeting = "Hello World!";
+        string text = "";
+        text += $"{greeting}, The result is: {sum}";
+    }
+
+    <p>Text: @text</p>
+
+    @{
+        string helloWorldMsg = "Good Day";
+        if (DateTime.Now.Hour > 17)
+        {
+            helloWorldMsg = "Good Evening";
+        }
+        helloWorldMsg += " , world!";
+        helloWorldMsg = helloWorldMsg.ToUpper();
+    }
+
+    <div>
+        <p>
+            @helloWorldMsg
+        </p>
+    </div>
+
+    <br />
+    <br />
+    <h2>If Statements</h2>
+    @{
+        var x = "apples";
+        if(x == "lemons")
+        {
+            <p>Lemonade</p>
+        }
+        else if(x == "banana")
+        {
+            <p>Banana Cream Pie</p>
+        }
+        else
+        {
+            <p>Applesauce</p>
+        }
+    }
+    <br />
+    <br />
+    <h2>Loops</h2>
+    @{
+        List<string> fruits = new List<string>()
+        {
+            "Pineapples",
+            "Apples",
+            "Bananas",
+            "Oranges",
+        };
+    }
+
+    <ol>
+        @foreach(string fruit in fruits)
+        {
+            <li>@fruit</li>
+        }
+    </ol>
+
 </body>
 </html>
