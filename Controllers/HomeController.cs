@@ -13,5 +13,11 @@ namespace HelloRaptors.Controllers
             };
             return View(player);
         }
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
+            return Content("Edit");
+        }
     }
 }
