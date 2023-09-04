@@ -111,5 +111,35 @@
         }
     </ol>
 
+    @{
+        Dictionary<string, int> friends = new();
+        friends.Add("Travis", 43);
+        friends.Add("Techla", 47);
+        friends.Add("Delta", 43);
+        friends.Add("Rodger", 13);
+    }
+    <h3>Over 30</h3>
+    <ol>
+        
+        @foreach(var friend in friends)
+        {
+            if(friend.Value > 30)
+            {
+                <li>name: @friend.Key, age: @friend.Value</li>
+            }
+        }
+        
+    </ol>
+    <h3>30 or less</h3>
+    <ol>
+        @foreach (var friend in friends)
+        {
+            if (friend.Value <= 30)
+            {
+                <li>name: @friend.Key, age: @friend.Value</li>
+            }
+        }
+    </ol>
+
 </body>
 </html>
