@@ -11,8 +11,24 @@
     <title>Raptors</title>
 </head>
 <body>
+
+    <h2>The Toronto Raptors</h2>
+
+
+    @*Here we are referencing our view located in the shared folder
+        When the View is rendered the content of the Partial View is
+        automatically injected into the place where you called the 
+        PartialAsync() method mixing in with the rest of the View
+        Notice that we didn't have to specify a complete filename 
+        and path or the Partial View.  The shared folder is automatically
+        searched for during the View discovery process
+    *@
+    @await Html.PartialAsync("_RaptorHello")
+
     <h1><b>@Model.PlayerName</b></h1>
     <br />
     <p>was signed by the Toronto Raptors on @Model.ArrivalDate.ToLongDateString()</p>
+
+
 </body>
 </html>
