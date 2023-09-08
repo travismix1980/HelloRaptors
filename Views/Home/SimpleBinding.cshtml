@@ -1,0 +1,25 @@
+﻿@model HelloRaptors.Models.Player
+@{
+    ViewData["Title"] = "Simple Binding";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<h1>Simple Binding</h1>
+
+@using (var form = Html.BeginForm())
+{
+    <div style="color: red;">
+        @Html.ValidationSummary()
+    </div>
+    <div>
+        @Html.LabelFor(x => x.PlayerName)
+        @Html.TextBoxFor(x => x.PlayerName)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.Position)
+        @Html.TextBoxFor(x => x.Position)
+    </div>
+    <input type="submit" value="submit" />
+}
+

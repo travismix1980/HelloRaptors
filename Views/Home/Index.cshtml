@@ -1,16 +1,8 @@
 ﻿@model HelloRaptors.Models.Raptors;
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Raptors</title>
-</head>
-<body>
 
     <h2>The Toronto Raptors</h2>
 
@@ -23,12 +15,9 @@
         and path or the Partial View.  The shared folder is automatically
         searched for during the View discovery process
     *@
-    @await Html.PartialAsync("_RaptorHello")
+    @*@await Html.PartialAsync("_RaptorHello")*@
 
     <h1><b>@Model.PlayerName</b></h1>
     <br />
     <p>was signed by the Toronto Raptors on @Model.ArrivalDate.ToLongDateString()</p>
 
-
-</body>
-</html>

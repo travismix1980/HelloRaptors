@@ -11,9 +11,14 @@ namespace HelloRaptors
 
             app.UseRouting();
 
+            //app.MapControllerRoute(
+            //    name: "product",
+            //    pattern: "{controller=Product}/{action=Details}/{id?}");
+
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
+
             app.Run();
         }
     }
